@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+}
+
+.left, .right {
+    flex: 1;
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

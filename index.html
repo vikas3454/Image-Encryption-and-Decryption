@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Encryption & Decryption Tool</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .section {
+            width: 45%;
+            padding: 20px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .left-section {
+            border: 2px dashed #007bff;
+        }
+        .right-section {
+            border: 2px dashed #28a745;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .image-container {
+            text-align: center;
+            display: none; /* Initially hide both image containers */
+            margin-top: 20px;
+        }
+        .image-container.active {
+            display: block; /* Display the active image container */
+        }
+        .image-container img {
+            max-width: 100%;
+            max-height: 300px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="section left-section">
+            <h2>Image Encryption</h2>
+            <input id="encryptInput" type="file" accept="image/*">
+            <button onclick="displayEncryptedImage()">Encrypt</button>
+            <div class="image-container" id="encryptedImageContainer">
+                <p>Encrypted image will appear here</p>
+                <img id="encryptedImage" src="encrypted_image.jpg" alt="Encrypted Image">
+            </div>
+        </div>
+        <div class="section right-section">
+            <h2>Image Decryption</h2>
+            <input id="decryptInput" type="file" accept="image/*">
+            <button onclick="displayDecryptedImage()">Decrypt</button>
+            <div class="image-container" id="decryptedImageContainer">
+                <p>Decrypted image will appear here</p>
+                <img id="decryptedImage" src="decrypted_image.jpg" alt="Decrypted Image">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function displayEncryptedImage() {
+            document.getElementById('encryptedImageContainer').classList.add('active');
+        }
+
+        function displayDecryptedImage() {
+            document.getElementById('decryptedImageContainer').classList.add('active');
+        }
+    </script>
+</body>
+</html>
